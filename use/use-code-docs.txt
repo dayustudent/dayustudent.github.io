@@ -1,0 +1,11 @@
+git status                        //加载未上传或有修改的文件
+git add .                         //当前目录下的所有文件
+git status                       //如果文件变绿即可上传
+git commit -m "modify"//上传文件
+git pull                         //列举文件，输入后可能提示输入e-mail，username，直接复制它给你的指令输入即可
+git push                      //上传文件到服务器，首次可能要登录
+/*结尾出现类似
+  To https://github.com/dayustudent/dyst-web.git
+          1abc590..45c81fc  main -> main
+    即代表上传成功
+*/
