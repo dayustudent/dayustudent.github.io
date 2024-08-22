@@ -7,7 +7,7 @@ const DIALOG_CLOSE_BTN_CLASS = 'dialog-close-btn';
   
 // 创建并显示对话框的函数  
 function showDialog(message) {  
-    // 清除已存在的对话框（如果有）  
+    // 清除存在的对话框 
     removeDialog();  
   
     // 创建对话框容器  
@@ -59,6 +59,4 @@ function removeDialog() {
     }  
 }  
 
-  
-// 假设页面上有一个按钮用于触发对话框显示  
-// <button id="show-dialog-btn">显示信息提示框</button>
+// 使用示例：showDialog(一个文本消息);
