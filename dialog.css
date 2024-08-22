@@ -22,7 +22,7 @@
     border-radius: 5px;  
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);  
     position: fixed; /* 或者 relative/absolute，取决于你的布局 */  
-    z-index: 9999; /* 很高的 z-index 值 */  
+    z-index: 9999; /* 这里设置一个很高的z-index值 */  
 }  
   
 .dialog-content {  
@@ -39,7 +39,7 @@
     border: none;  
     border-radius: 5px; /* 添加圆角 */  
     cursor: pointer;  
-    transition: background-color 0.3s ease; /* 添加过渡效果 */ 
+    transition: background-color 0.3s ease; /* 0.3秒的过渡效果 */ 
 }
 .dialog-close-btn:hover {  
     background-color: #45a049; /* 鼠标悬停时改变背景色 */  
