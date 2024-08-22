@@ -29,11 +29,11 @@ nav::after {
     align-items: center;
 }  
 .nav-logo {  
-  width: 30px; /* 你可以根据需要调整尺寸 */  
-  height: 30px; /* 你可以根据需要调整尺寸 */  
+  width: 30px; /* 图标的宽度 */  
+  height: 30px; /* 图标的高度 */  
   vertical-align: middle; /* 与文本垂直对齐 */  
   margin-right: 10px; /* 图标与文本之间的间距 */ 
-  border-radius: 5px; /* 设置为50%将图片变成圆形 */ 
+  border-radius: 5px; /* 设置圆角 */ 
 }
   
 /* 主体内容样式 */   
@@ -68,7 +68,7 @@ body {
 }  
 .content {  
     padding: 20px;  
-    background-color: #ebebeb; /* 修改为背景色为白色或其他合适的颜色 */  
+    background-color: #ebebeb; /* 背景色灰色 */  
 }  
 h1 {  
     color: rgb(0, 0, 0);
@@ -104,10 +104,10 @@ a:hover {
 .copyright:hover {
     color: #545b62
 }
-.icp-link {  
+.footer-link {  
     color: #6c757d; /* 灰色 */  
 }  
-.icp-link:hover {  
+.footer-link:hover {  
     color: #545b62; /* 悬停时改变颜色 */  
 }  
    
