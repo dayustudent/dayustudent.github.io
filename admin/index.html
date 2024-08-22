@@ -1,1 +1,77 @@
-<p>Admin is dystudio!</p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>大羽同学-Admin</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    <link rel="stylesheet" type="text/css" href="/dialog.css">  
+    <style>
+     body {  
+       background-color: #ebebeb;  
+    } 
+    .header-img {  
+    position: relative; /* 确保伪元素是相对于此元素定位的 */  
+    height: 400px;  
+    width: 45%;  
+    background-image: url('index.png');
+    background-position: center;
+    background-repeat: no-repeat;  
+    background-size: cover;  
+    color: #ebebeb;  
+    border-radius: 5px;  
+}  
+  
+.header-img::before {  
+    content: "";  
+    position: absolute;  
+    top: 0;  
+    left: 0;  
+    right: 0;  
+    bottom: 0;  
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);  
+    pointer-events: none; /* 确保渐变层不阻挡鼠标事件 */  
+    border-radius: inherit; /* 继承header的边框半径 */  
+    z-index: 1; /* 确保伪元素在图片上方 */  
+}  
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <a href="/"><img src="favicon.ico" alt="dystudio" class="nav-logo"></a>
+        <a href="index.html">首页</a>
+        <a href="about">关于我们</a>
+        <a href="//n.dystudio.us.kg/mc.zip">mc下载</a>
+        <a href="//dystudio.us.kg/login/face">face专用</a>
+    </nav>
+    
+    <p>               </p>
+    <p>               </p>
+    
+    <div class="header"></div>
+    <div class="content">
+        <h1>admin</h1>
+    </div>
+    
+    <!-- 底部 -->
+    <div class="footer">
+        <div class="copyright">
+            <h5> </h5>
+            <a href="/" class="copyright">Copyright &copy; 2020-2024 DYStudio All Rights Reserved.</a>
+            <h5> </h5>
+            <!--<p>&copy; 2024 dystudio</p>-->
+        </div>
+        <div class="footer-link">
+            <a href="https://icp.gov.moe/?keyword=20240280" target="_blank" class="footer-link">萌ICP备20240280号</a>
+            <a href="https://rainyun.com/cart1_" target="_blank" class="footer-link">本站由雨云提供加速服务</a>
+        </div>
+    </div>
+    <script src="dialog.js"></script>
+    <script>
+      //showDialog('欢迎来到大羽同学!');  
+    </script>
+</body>
+</html>
+
