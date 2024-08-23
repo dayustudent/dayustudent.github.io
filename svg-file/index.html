@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    textarea {
+      width: 400px;
+      height: 200px;
+      resize: vertical;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>输入 SVG 代码并下载</h1>
+  <textarea id="svgInput" rows="10" cols="50"></textarea>
+  <br>
+  <button onclick="downloadSVG()">下载 SVG</button>
+
+  <script>
+    function downloadSVG() {
+      const svgCode = document.getElementById('svgInput').value;
+      if (svgCode) {
+        const a = document.createElement('a');
+        a.href = 'data:image/svg+xml,' + encodeURIComponent(svgCode);
+        a.download = 'image.svg';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      } else {
+        alert('请输入有效的 SVG 代码。');
+      }
+    }
+  </script>
+
+</body>
+
+</html>
