@@ -1,4 +1,4 @@
-const { sendRequest } = require('./chat.js'); //引入后端聊天处理代码
+import sendRequest from './chat.js'; //引入后端聊天处理代码
 
 const sendButton = document.querySelector('button');
 const inputField = document.querySelector('input[type="text"]');
