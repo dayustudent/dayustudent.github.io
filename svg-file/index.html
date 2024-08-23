@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+  <title>SvgcodeToSvgfile</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,13 +12,19 @@
       height: 100vh;
     }
 
+    h1 {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-weight: 300;
+    }
+
     textarea {
       width: 400px;
       height: 200px;
       resize: vertical;
       padding: 10px;
       border: 1px solid #ccc;
-      border-radius: 5px;
+      border-radius: 10px;
+      font-family: "Helvetica Neue", Arial, sans-serif;
     }
 
     button {
@@ -55,7 +61,7 @@
         a.click();
         document.body.removeChild(a);
       } else {
-        alert('请输入有效的 SVG 代码。');
+        alert('请输入有效的 SVG 代码!');
       }
     }
   </script>
