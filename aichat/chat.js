@@ -1,10 +1,11 @@
-//版本1.0.4
-const crypto = window.CryptoJS;
+// 版本 1.0.5
+
+// 引入 CryptoJS 库
+const CryptoJS = window.CryptoJS;
 
 function calculateMd5(inputString) {
-  const hash = crypto.createHash('md5');
-  hash.update(inputString);
-  return hash.digest('hex');
+  // 使用 CryptoJS 的 MD5 方法
+  return CryptoJS.MD5(inputString).toString(CryptoJS.enc.Hex);
 }
 
 function genToken(reqText) {
