@@ -1,3 +1,5 @@
+const { sendRequest } = require('./chat.js'); //引入后端聊天处理代码
+
 const sendButton = document.querySelector('button');
 const inputField = document.querySelector('input[type="text"]');
 const chatMessages = document.querySelector('.chat-messages');
@@ -9,12 +11,13 @@ sendButton.addEventListener('click', () => {
     messageDiv.classList.add('message', 'user-message');
     messageDiv.textContent = userMessage;
     chatMessages.appendChild(messageDiv);
+    const input = inputField.value;
+    sendRequest(input).then(answer => { if (answer) {var ans = answer;});
     inputField.value = '';
-    // 模拟 AI 回复（实际应用中应通过后端获取回复）
     setTimeout(() => {
       const aiMessageDiv = document.createElement('div');
       aiMessageDiv.classList.add('message', 'ai-message');
-      aiMessageDiv.textContent = '这是 AI 的回复。';
+      aiMessageDiv.textContent = ans;
       chatMessages.appendChild(aiMessageDiv);
       chatMessages.scrollTop = chatMessages.scrollHeight;
     }, 1000);
