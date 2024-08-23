@@ -17,34 +17,27 @@ function genToken(reqText) {
 }
 
 function sendRequest(prompt) {
-  const myHeaders = new Headers();
-  myHeaders.append("ca", "20303983-1dd0-4b0a-9a97-0b6abf4cb5e6");
+  const myHeaders = {
+    'ca': '20303983-1dd0-4b0a-9a97-0b6abf4cb5e6'
+  };
 
   const token = genToken(prompt);
 
-  const raw = JSON.stringify({
+  const data = {
     "prompt": prompt,
     "token": token,
     "stream": false
-  });
-
-  const requestOptions = {
-    method: 'POST',
-    headers: myHeaders,
-    body: raw,
-    redirect: 'follow'
   };
 
-  return fetch("https://ai.coludai.cn/api/chat", requestOptions)
+  return axios.post("https://ai.coludai.cn/api/chat", data, {
+    headers: myHeaders
+  })
    .then(response => {
-      if (!response.ok) {
+      if (response.status >= 200 && response.status < 300) {
+        return response.data.output;
+      } else {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-      return response.text();
-    })
-   .then(result => {
-      const data = JSON.parse(result);
-      return data.output;
     })
    .catch(error => {
       console.log('Error:', error);
