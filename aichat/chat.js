@@ -1,4 +1,3 @@
-const crypto = require('crypto');
 
 function calculateMd5(inputString) {
   const hash = crypto.createHash('md5');
