@@ -1,4 +1,4 @@
-// 版本 1.0.5
+// 版本 1.0.6
 
 // 引入 CryptoJS 库
 const CryptoJS = window.CryptoJS;
@@ -30,7 +30,7 @@ function sendRequest(prompt) {
   const requestOptions = {
     method: 'POST',
     headers: myHeaders,
-    body: raw,
+    body: JSON.parse(raw),
     redirect: 'follow'
   };
 
