@@ -1,5 +1,5 @@
-// 版本 1.0.6
-console("版本1.0.7");
+// 版本 1.0.7-5
+console.log("版本1.0.7-5");
 
 // 引入 CryptoJS 库
 const CryptoJS = window.CryptoJS;
