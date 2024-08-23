@@ -1,4 +1,6 @@
-//版本1.0.3
+//版本1.0.4
+const crypto = window.CryptoJS;
+
 function calculateMd5(inputString) {
   const hash = crypto.createHash('md5');
   hash.update(inputString);
