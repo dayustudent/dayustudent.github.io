@@ -48,6 +48,6 @@ function sendRequest(prompt) {
     })
    .catch(error => {
       console.log('Error:', error);
-      return response.text();
+      return "暂时无法完成请求，请稍后再试";
     });
 }
