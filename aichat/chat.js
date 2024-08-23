@@ -1,4 +1,4 @@
-//版本1.0.2
+//版本1.0.3
 function calculateMd5(inputString) {
   const hash = crypto.createHash('md5');
   hash.update(inputString);
@@ -47,5 +47,3 @@ function sendRequest(prompt) {
       return null;
     });
 }
-
-module.exports = { sendRequest };
