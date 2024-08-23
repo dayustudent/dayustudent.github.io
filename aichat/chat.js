@@ -1,5 +1,5 @@
-// 版本 1.0.7-5
-console.log("版本1.0.7-5");
+// 版本 1.0.8
+console.log("版本1.0.8");
 
 // 引入 CryptoJS 库
 const CryptoJS = window.CryptoJS;
@@ -12,7 +12,7 @@ function calculateMd5(inputString) {
 function genToken(reqText) {
   const currentDate = new Date();
   const formattedDate = `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${currentDate.getDate().toString().padStart(2, '0')}`;
-  const dateMd5 = calculateMd5(formattedDate).substring(0, 5);
+  const dateMd5 = calculateMd5(formattedDate).substring(0, 6);
   return calculateMd5(reqText + dateMd5);
 }
 
