@@ -11,6 +11,7 @@ sendButton.addEventListener('click', () => {
     messageDiv.textContent = userMessage;
     chatMessages.appendChild(messageDiv);
     const input = inputField.value;
+    let ans;
     sendRequest(input).then(answer => { if (answer) {var ans = answer;}});
     inputField.value = '';
     setTimeout(() => {
