@@ -30,7 +30,7 @@ function sendRequest(prompt) {
   const requestOptions = {
     method: 'POST',
     headers: myHeaders,
-    body: JSON.parse(raw),
+    body: raw,
     redirect: 'follow'
   };
 
