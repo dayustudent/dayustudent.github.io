@@ -1,4 +1,5 @@
 // 版本 1.0.6
+console("版本1.0.7");
 
 // 引入 CryptoJS 库
 const CryptoJS = window.CryptoJS;
@@ -47,6 +48,6 @@ function sendRequest(prompt) {
     })
    .catch(error => {
       console.log('Error:', error);
-      return null;
+      return response.text();
     });
 }
