@@ -12,7 +12,7 @@ sendButton.addEventListener('click', () => {
     messageDiv.textContent = userMessage;
     chatMessages.appendChild(messageDiv);
     const input = inputField.value;
-    sendRequest(input).then(answer => { if (answer) {var ans = answer;});
+    sendRequest(input).then(answer => { if (answer) {var ans = answer;}});
     inputField.value = '';
     setTimeout(() => {
       const aiMessageDiv = document.createElement('div');
