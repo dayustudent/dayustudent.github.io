@@ -85,3 +85,24 @@ pre code {
     white-space: pre-wrap;
     word-wrap: break-word;
 }
+
+span.gl {
+    display: inline-block;
+    background-color: #444;
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+    font-family: monospace;
+}
+
+span.code-js {
+    background-color: #f1e05a;
+    color: #333;
+}
+
+span.code-python {
+    background-color: #3776ab;
+    color: #fff;
+}
+
+/* 可以根据需要添加更多针对不同语言的样式 */
