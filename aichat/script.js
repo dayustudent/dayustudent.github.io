@@ -1,3 +1,10 @@
+function addMessage(message, sender) {
+      const messageDiv = document.createElement('div');
+      messageDiv.classList.add('message', `${sender}-message`);
+      messageDiv.textContent = message;
+      chatMessages.appendChild(messageDiv);
+    }
+
 const sendButton = document.querySelector('button');
 const inputField = document.querySelector('input[type="text"]');
 const chatMessages = document.querySelector('.chat-messages');
