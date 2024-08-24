@@ -1,4 +1,3 @@
-
 const sendButton = document.querySelector('button');
 const inputField = document.querySelector('input[type="text"]');
 const chatMessages = document.querySelector('.chat-messages');
@@ -11,6 +10,7 @@ sendButton.addEventListener('click', async () => {
         messageDiv.textContent = userMessage;
         chatMessages.appendChild(messageDiv);
         const input = inputField.value;
+        inputField.value = '';
         let ans;
         try {
             ans = await sendRequest(input);
@@ -18,7 +18,6 @@ sendButton.addEventListener('click', async () => {
             console.log('Error:', error);
             ans = null;
         }
-        inputField.value = '';
         setTimeout(() => {
             const aiMessageDiv = document.createElement('div');
             aiMessageDiv.classList.add('message', 'ai-message');
