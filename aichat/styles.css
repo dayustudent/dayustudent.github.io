@@ -65,10 +65,23 @@ button {
   border-radius: 4px;
   cursor: pointer;
 }
+pre {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    overflow-x: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+code {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
 pre code {
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  padding: 10px;
-  font-family: monospace;
-  overflow-x: auto;
+    display: block;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
