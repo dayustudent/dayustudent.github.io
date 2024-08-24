@@ -21,7 +21,8 @@ function MdToHTML(markdown) {
             html += `<li>${line.slice(2).trim()}</li>`;
         } else if (line.startsWith('```')) {
             if (isCodeBlock) {
-                html += `<pre><code class="language-${language}">${codeContent}</code></pre>`;
+                const codeSpan = `<span class="gl code-${language}">${codeContent}</span>`;
+                html += codeSpan;
                 codeContent = '';
                 isCodeBlock = false;
                 language = '';
