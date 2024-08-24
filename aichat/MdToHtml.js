@@ -1,60 +1,60 @@
 function MdToHTML(markdown) {
     let html = '';
-    const lines = markdown.split('\n');
-    let isParagraph = false;
-    let isList = false;
+    let lines = markdown.split('\n');
+    let inParagraph = false;
+    let inList = false;
     let listItemCount = 0;
-    let isCodeBlock = false;
+    let inCodeBlock = false;
     let codeContent = '';
-    let language = '';
+    let codeLanguage = '';
 
-    for (const line of lines) {
+    for (let line of lines) {
         if (line.startsWith('#')) {
-            const headingLevel = line.match(/^#+/).length;
+            let headingLevel = line.match(/^#+/).length;
             html += `<h${headingLevel}>${line.slice(headingLevel).trim()}</h${headingLevel}>`;
         } else if (line.startsWith('* ')) {
-            if (!isList) {
-                isList = true;
+            if (!inList) {
+                inList = true;
                 html += '<ul>';
             }
             listItemCount++;
             html += `<li>${line.slice(2).trim()}</li>`;
         } else if (line.startsWith('```')) {
-            if (isCodeBlock) {
-                const codeSpan = `<span class="gl code-${language}">${codeContent}</span>`;
+            if (inCodeBlock) {
+                const codeSpan = `<span class="gl code-${codeLanguage}">${codeContent}</span>`;
                 html += codeSpan;
                 codeContent = '';
-                isCodeBlock = false;
-                language = '';
+                inCodeBlock = false;
+                codeLanguage = '';
             } else {
-                isCodeBlock = true;
-                language = line.slice(3).trim();
+                inCodeBlock = true;
+                codeLanguage = line.slice(3).trim();
             }
-        } else if (isCodeBlock) {
+        } else if (inCodeBlock) {
             codeContent += line + '\n';
         } else if (line.trim() === '') {
-            if (isParagraph) {
+            if (inParagraph) {
                 html += '</p>';
-                isParagraph = false;
+                inParagraph = false;
             }
-            if (isList && listItemCount > 0) {
+            if (inList && listItemCount > 0) {
                 html += '</ul>';
-                isList = false;
+                inList = false;
                 listItemCount = 0;
             }
         } else {
-            if (!isParagraph) {
-                isParagraph = true;
+            if (!inParagraph) {
+                inParagraph = true;
                 html += '<p>';
             }
             html += line.trim() + ' ';
         }
     }
 
-    if (isParagraph) {
+    if (inParagraph) {
         html += '</p>';
     }
-    if (isList && listItemCount > 0) {
+    if (inList && listItemCount > 0) {
         html += '</ul>';
     }
 
