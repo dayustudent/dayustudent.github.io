@@ -13,7 +13,7 @@ sendButton.addEventListener('click', async () => {
         inputField.value = '';
         let ans;
         try {
-            ans = await sendRequest(input);
+            ans = await MdToHTML(sendRequest(input));
         } catch (error) {
             console.log('Error:', error);
             ans = null;
