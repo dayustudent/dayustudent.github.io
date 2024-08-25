@@ -21,7 +21,9 @@ function MdToHTML(markdown) {
             html += `<li>${line.slice(2).trim()}</li>`;
         } else if (line.startsWith('```')) {
             if (inCodeBlock) {
-                const codeSpan = `<span class="gl code-${codeLanguage}">${codeContent}</span>`;
+                // 使用 Prism.js 进行代码高亮
+                const highlightedCode = Prism.highlight(codeContent, Prism.languages[codeLanguage], codeLanguage);
+                const codeSpan = `<span class="gl code-${codeLanguage}">${highlightedCode}</span>`;
                 html += codeSpan;
                 codeContent = '';
                 inCodeBlock = false;
